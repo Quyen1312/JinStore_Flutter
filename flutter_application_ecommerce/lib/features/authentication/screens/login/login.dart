@@ -7,36 +7,45 @@ import 'package:flutter_application_ecommerce/features/authentication/screens/lo
 import 'package:flutter_application_ecommerce/utils/constants/sizes.dart';
 import 'package:flutter_application_ecommerce/utils/constants/text_string.dart';
 import 'package:get/get.dart';
-class LoginScreen  extends StatelessWidget {
-  const LoginScreen ({super.key});
+
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SingleChildScrollView(
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Theme.of(context).colorScheme.primary.withOpacity(0.1),
+              Colors.white,
+            ],
+          ),
+        ),
+        child: SingleChildScrollView(
           child: Padding(
             padding: AppSpacingStyle.paddingWithAppBarHeight,
             child: Column(
               children: [
                 /// Logo, Title & Sub-Title
-                login_header(),
-                //Form
-                AppLoginForm(),
-
-              //Divider
-              AppFormDivider(dividerText: AppTexts.orSignInWith.capitalize!,),
-                 const SizedBox(height: AppSizes.spaceBtwItems),
-
-              AppSocialButton()
-            ],
+                const login_header(),
+                const SizedBox(height: AppSizes.SpaceBtwSection),
+                /// Form
+                const AppLoginForm(),
+                /// Divider
+                AppFormDivider(dividerText: AppTexts.orSignInWith.capitalize!),
+                const SizedBox(height: AppSizes.spaceBtwItems),
+                /// Social Buttons
+                const AppSocialButton(),
+                const SizedBox(height: AppSizes.SpaceBtwSection),
+              ],
             ),
-            ),
+          ),
         ),
+      ),
     );
   }
 }
-
-
-
-
-

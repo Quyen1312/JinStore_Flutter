@@ -9,7 +9,8 @@ class AppCircularContainer extends StatelessWidget {
     this.height = 400,
     this.radius = 400,
     this.padding = 0,
-    this.backgroundColor = AppColors.background
+    this.margin,
+    this.backgroundColor = AppColors.backgroundColor
 
   });
 
@@ -17,6 +18,7 @@ class AppCircularContainer extends StatelessWidget {
   final double? height;
   final double radius;
   final double padding;
+  final EdgeInsets? margin;
   final Widget? child;
   final Color backgroundColor;
 
@@ -25,10 +27,11 @@ class AppCircularContainer extends StatelessWidget {
     return Container(
       width: width,
       height: height,
-      padding: const EdgeInsets.all(0),
+      margin: margin,
+      padding: EdgeInsets.all(padding),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(400),
-        color: AppColors.textLight.withOpacity(0.1),
+        borderRadius: BorderRadius.circular(radius),
+        color: backgroundColor,
       ),
       child: child,
     );

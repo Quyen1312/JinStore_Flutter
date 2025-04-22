@@ -16,13 +16,13 @@ class AppTermsAndConditionCheckbox extends StatelessWidget {
         Text.rich(
           TextSpan(
           children: [
-            TextSpan(text: '${AppTexts.iAgreeTo}', style: Theme.of(context).textTheme.bodySmall),
-            TextSpan(text: '${AppTexts.privacyPolicy}', style: Theme.of(context).textTheme.bodyMedium!.apply(
+            TextSpan(text: AppTexts.iAgreeTo, style: Theme.of(context).textTheme.bodySmall),
+            TextSpan(text: AppTexts.privacyPolicy, style: Theme.of(context).textTheme.bodyMedium!.apply(
               decoration: TextDecoration.underline,
               ),
               ),
-            TextSpan(text: '${AppTexts.and}', style: Theme.of(context).textTheme.bodySmall),
-            TextSpan(text: '${AppTexts.termsOfUse}', style: Theme.of(context).textTheme.bodyMedium!.apply(
+            TextSpan(text: AppTexts.and, style: Theme.of(context).textTheme.bodySmall),
+            TextSpan(text: AppTexts.termsOfUse, style: Theme.of(context).textTheme.bodyMedium!.apply(
               decoration: TextDecoration.underline,
               ),
             ),

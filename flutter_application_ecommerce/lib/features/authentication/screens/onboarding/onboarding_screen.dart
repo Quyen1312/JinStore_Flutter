@@ -8,7 +8,6 @@ import 'package:flutter_application_ecommerce/features/authentication/screens/on
 import 'package:flutter_application_ecommerce/utils/constants/image_strings.dart';
 import 'package:flutter_application_ecommerce/utils/constants/text_string.dart';
 
-
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
 
@@ -16,57 +15,52 @@ class OnboardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(OnboardingController());
 
-
-
     return Scaffold(
-      body: SafeArea(
-        child: Stack(
-        children: [
-          PageView(
-            controller: controller.pageController,
-            onPageChanged: controller.updatePageIndicator,
-            children: [
-              OnBoardingPage(
-                image: AppImages.onBoardingImage1,
-                title: AppTexts.onBoardingTitle1,
-                subTitle: AppTexts.onBoardingSubTitle1,
-                ),
-          
-                OnBoardingPage(
-                image: AppImages.onBoardingImage2,
-                title: AppTexts.onBoardingTitle2,
-                subTitle: AppTexts.onBoardingSubTitle2,
-                ),
-          
-                OnBoardingPage(
-                image: AppImages.onBoardingImage3,
-                title: AppTexts.onBoardingTitle3,
-                subTitle: AppTexts.onBoardingSubTitle3,
-                ),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Theme.of(context).colorScheme.primary.withOpacity(0.1),
+              Colors.white,
             ],
           ),
-          // skip buttonbutton
-          OnboardingSkip(),
-
-          //dot navigation smoothpage indicator
-          OnboardingDotNavigation(),
-
-          //Circular Next Button
-          OnBoardingNextButton()
-
-        ],
-        
+        ),
+        child: SafeArea(
+          child: Stack(
+            children: [
+              PageView(
+                controller: controller.pageController,
+                onPageChanged: controller.updatePageIndicator,
+                children: [
+                  OnBoardingPage(
+                    image: AppImages.onBoardingImage1,
+                    title: AppTexts.onBoardingTitle1,
+                    subTitle: AppTexts.onBoardingSubTitle1,
+                  ),
+                  OnBoardingPage(
+                    image: AppImages.onBoardingImage2,
+                    title: AppTexts.onBoardingTitle2,
+                    subTitle: AppTexts.onBoardingSubTitle2,
+                  ),
+                  OnBoardingPage(
+                    image: AppImages.onBoardingImage3,
+                    title: AppTexts.onBoardingTitle3,
+                    subTitle: AppTexts.onBoardingSubTitle3,
+                  ),
+                ],
+              ),
+              // Skip Button
+              OnboardingSkip(),
+              // Dot Navigation
+              OnboardingDotNavigation(),
+              // Next Button
+              OnBoardingNextButton(),
+            ],
+          ),
         ),
       ),
     );
   }
-
-  
-
-  
 }
-
-
-
-
-

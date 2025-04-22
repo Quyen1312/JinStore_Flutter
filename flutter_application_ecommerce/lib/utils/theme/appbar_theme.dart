@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_ecommerce/utils/constants/sizes.dart';
 
 class JAppbarTheme {
   JAppbarTheme._();
 
-  static const jAppbarTheme = AppBarTheme(
+  static const homeAppbarTheme = AppBarTheme(
     elevation: 0,
     centerTitle: false,
     scrolledUnderElevation: 0,
     backgroundColor: Colors.transparent,
     surfaceTintColor: Colors.transparent,
-    iconTheme: IconThemeData(color: Colors.purple, size: 24),
-    actionsIconTheme: IconThemeData(color: Colors.purple, size: 24),
-    titleTextStyle: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600, color: Colors.purple),
-  ); 
-
+    iconTheme: IconThemeData(color: Colors.white, size: AppSizes.iconMd),
+    actionsIconTheme: IconThemeData(color: Colors.white, size: AppSizes.iconMd),
+    titleTextStyle: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600, color: Colors.white),
+  );
 }

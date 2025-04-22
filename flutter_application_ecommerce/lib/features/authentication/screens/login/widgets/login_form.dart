@@ -7,9 +7,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class AppLoginForm extends StatelessWidget {
-  const AppLoginForm({
-    super.key,
-  });
+  const AppLoginForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,44 +18,61 @@ class AppLoginForm extends StatelessWidget {
           children: [
             // Email
             TextFormField(
-              decoration: const InputDecoration(
-                prefixIcon: Icon(Iconsax.direct_right),
+              decoration: InputDecoration(
+                prefixIcon: const Icon(Iconsax.direct_right),
                 labelText: AppTexts.email,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                filled: true,
+                fillColor: Colors.grey.shade50,
               ),
             ),
             const SizedBox(height: AppSizes.spaceBtwInputFields),
-
             // Password
             TextFormField(
-              decoration: const InputDecoration(
-                prefixIcon: Icon(Iconsax.password_check),
+              decoration: InputDecoration(
+                prefixIcon: const Icon(Iconsax.password_check),
                 labelText: AppTexts.password,
-                suffixIcon: Icon(Iconsax.eye_slash),
+                suffixIcon: const Icon(Iconsax.eye_slash),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                filled: true,
+                fillColor: Colors.grey.shade50,
               ),
             ),
-            const SizedBox(height: AppSizes.spaceBtwInputFields / 2),
-
-            /// Remember me & Forget Password
+            const SizedBox(height: AppSizes.spaceBtwInputFields),
+            // Remember me & Forget Password
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 // Remember me
                 Row(
                   children: [
-                    Checkbox(value: true, onChanged: (value) {}),
+                    Checkbox(
+                      value: true,
+                      onChanged: (value) {},
+                      activeColor: Theme.of(context).colorScheme.primary,
+                    ),
                     const Text(AppTexts.rememberMe),
                   ],
                 ),
                 // Forget password
                 TextButton(
                   onPressed: () {},
-                  child: const Text(AppTexts.forgetPassword),
+                  child: Text(
+                    AppTexts.forgetPassword,
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
                 ),
               ],
             ),
             const SizedBox(height: AppSizes.SpaceBtwSection),
-
-            // Sign in Button 
+            // Sign in Button
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -65,19 +80,35 @@ class AppLoginForm extends StatelessWidget {
                   backgroundColor: Theme.of(context).colorScheme.primary,
                   foregroundColor: Colors.white,
                   padding: const EdgeInsets.symmetric(vertical: 16),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  elevation: 3,
                 ),
                 onPressed: () => Get.to(() => const NavigationMenu()),
                 child: const Text(AppTexts.signIn),
               ),
             ),
             const SizedBox(height: AppSizes.spaceBtwItems),
-
             // Create Account Button
             SizedBox(
               width: double.infinity,
               child: OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  side: BorderSide(color: Theme.of(context).colorScheme.primary),
+                ),
                 onPressed: () => Get.to(() => const SignupScreen()),
-                child: const Text(AppTexts.createAccount),
+                child: Text(
+                  AppTexts.createAccount,
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.primary,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
               ),
             ),
           ],

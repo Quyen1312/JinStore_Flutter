@@ -3,8 +3,6 @@ import 'package:flutter_application_ecommerce/features/authentication/controller
 import 'package:flutter_application_ecommerce/utils/constants/sizes.dart';
 import 'package:flutter_application_ecommerce/utils/device/device_utility.dart';
 
-
-
 class OnBoardingNextButton extends StatelessWidget {
   const OnBoardingNextButton({super.key});
 
@@ -12,15 +10,21 @@ class OnBoardingNextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned(
       right: AppSizes.defaultSpace,
-      bottom: AppDeviceUtils.getBottomNavigationBarHeight() - 20,
+      bottom: AppDeviceUtils.getBottomNavigationBarHeight() + 20,
       child: ElevatedButton(
         onPressed: () => OnboardingController.instance.nextPage(),
         style: ElevatedButton.styleFrom(
           shape: const CircleBorder(),
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(16),
           backgroundColor: Theme.of(context).colorScheme.primary,
+          elevation: 5,
+          shadowColor: Colors.black.withOpacity(0.2),
         ),
-        child: const Icon(Icons.arrow_forward_ios_rounded, color: Colors.white,),
+        child: const Icon(
+          Icons.arrow_forward_ios_rounded,
+          color: Colors.white,
+          size: 20,
+        ),
       ),
     );
   }

@@ -46,6 +46,7 @@ dependencies:
   iconsax: ^0.0.8
   font_awesome_flutter: ^10.5.0
   google_fonts: ^6.2.1
+  carousel_slider: ^5.0.0
 
 dev_dependencies:
   flutter_test:
@@ -75,7 +76,7 @@ flutter:
     - assets/fonts/static/
     - assets/image/
     - assets/image/on_boarding_image/
-
+    - assets/image/banner/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
